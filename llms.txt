@@ -5,15 +5,15 @@ Jenasaro is construction production management software for connecting project s
 Canonical website: https://jenasaro.com/
 
 ## Core topics
-- Lean construction software: https://jenasaro.com/lean-construction-software.html
-- Construction scheduling software: https://jenasaro.com/construction-scheduling-software.html
-- Last Planner System workflows: https://jenasaro.com/last-planner-system.html
-- Takt planning: https://jenasaro.com/takt-planning.html
-- PPC and production control: https://jenasaro.com/ppc-production-control.html
-- Construction constraint management: https://jenasaro.com/constraint-management.html
-- Primavera P6 production planning: https://jenasaro.com/primavera-p6.html
+- Lean construction software: https://jenasaro.com/lean-construction-software
+- Construction scheduling software: https://jenasaro.com/construction-scheduling-software
+- Last Planner System workflows: https://jenasaro.com/last-planner-system
+- Takt planning: https://jenasaro.com/takt-planning
+- PPC and production control: https://jenasaro.com/ppc-production-control
+- Construction constraint management: https://jenasaro.com/constraint-management
+- Primavera P6 production planning: https://jenasaro.com/primavera-p6
 
 ## Platform capabilities
 Jenasaro connects schedule logic and baselines, look-ahead and make-ready planning, daily commitments, Percent Plan Complete, reasons for non-completion, constraint ownership, takt and workfront planning, team capacity, Primavera P6 import, drawing-based planning and management reporting.
 
-Product enquiries: https://jenasaro.com/interest.html
+Product enquiries: https://jenasaro.com/interest
