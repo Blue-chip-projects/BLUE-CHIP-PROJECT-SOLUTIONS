@@ -1,0 +1,60 @@
+name: Notify IndexNow
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "**/*.html"
+      - "sitemap.xml"
+      - "robots.txt"
+      - "llms.txt"
+      - ".github/workflows/indexnow.yml"
+  workflow_dispatch:
+
+jobs:
+  submit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out site
+        uses: actions/checkout@v4
+
+      - name: Build IndexNow payload from sitemap
+        run: |
+          python - <<'PY'
+          import json
+          import xml.etree.ElementTree as ET
+
+          key_file = "5ba54a09c02a245117bd2c602394e6c855172bfbd0034ad7.txt"
+          key = open(key_file, encoding="utf-8").read().strip()
+
+          ns = {"s": "http://www.sitemaps.org/schemas/sitemap/0.9"}
+          root = ET.parse("sitemap.xml").getroot()
+          urls = [n.text.strip() for n in root.findall("s:url/s:loc", ns) if n.text]
+
+          payload = {
+              "host": "jenasaro.com",
+              "key": key,
+              "keyLocation": f"https://jenasaro.com/{key}.txt",
+              "urlList": urls,
+          }
+
+          with open("indexnow.json", "w", encoding="utf-8") as f:
+              json.dump(payload, f)
+          PY
+
+      - name: Notify IndexNow
+        run: |
+          sleep 30
+          code=$(curl -sS -o indexnow-response.txt -w "%{http_code}" \
+            -X POST \
+            -H "Content-Type: application/json; charset=utf-8" \
+            --data-binary @indexnow.json \
+            https://api.indexnow.org/indexnow)
+
+          echo "IndexNow HTTP status: $code"
+
+          if [ "$code" != "200" ] && [ "$code" != "202" ]; then
+            cat indexnow-response.txt || true
+            exit 1
+          fi
