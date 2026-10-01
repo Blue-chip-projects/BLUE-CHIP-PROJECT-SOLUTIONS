@@ -28,7 +28,7 @@ Canonical website: https://jenasaro.com/
 - Primavera P6 production planning: https://jenasaro.com/primavera-p6
 
 ## Platform capabilities
-Jenasaro connects schedule logic and baselines, look-ahead planning, work readiness, daily commitments, planned-versus-actual execution, constraints, milestones, team capacity, subcontractor coordination, Primavera P6 import, drawing-based workfront planning and management project-performance analytics.
+Jenasaro connects schedule logic and baselines, look-ahead planning, work readiness, daily commitments, planned-versus-actual execution, constraints, milestones, team capacity, subcontractor coordination, Primavera P6 import, drawing-based workfront planning and management project-performance analytics. Management views can include plan reliability/PPC, contractor KPIs, milestone trends, reasons for variance, constraint ageing, resource conflicts, escalation flags and report-ready summaries.
 
 Lean construction, Last Planner, PPC and takt planning are supported methodologies within the broader planning and execution-control workflow.
 
