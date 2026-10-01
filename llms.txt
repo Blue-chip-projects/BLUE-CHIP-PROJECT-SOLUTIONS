@@ -1,12 +1,26 @@
 # Jenasaro
 
-Jenasaro is construction production management software for connecting project scheduling with Lean production control and field execution.
+Jenasaro is construction planning, production management and execution-control software for connecting project schedules with work readiness, field delivery and management analytics.
 
 Canonical website: https://jenasaro.com/
 
-## Core topics
-- Lean construction software: https://jenasaro.com/lean-construction-software
+## Core positioning
+- Project planning
+- Construction scheduling
+- Production management
+- Execution control
+- Project controls
+- Daily production planning
+- Constraint and work-readiness management
+- Milestone management
+- Resource and team planning
+- Construction analytics
+
+## Core pages
+- Production management software: https://jenasaro.com/production-management-software
+- Construction execution control: https://jenasaro.com/construction-execution-control
 - Construction scheduling software: https://jenasaro.com/construction-scheduling-software
+- Lean construction software: https://jenasaro.com/lean-construction-software
 - Last Planner System workflows: https://jenasaro.com/last-planner-system
 - Takt planning: https://jenasaro.com/takt-planning
 - PPC and production control: https://jenasaro.com/ppc-production-control
@@ -14,6 +28,9 @@ Canonical website: https://jenasaro.com/
 - Primavera P6 production planning: https://jenasaro.com/primavera-p6
 
 ## Platform capabilities
-Jenasaro connects schedule logic and baselines, look-ahead and make-ready planning, daily commitments, Percent Plan Complete, reasons for non-completion, constraint ownership, takt and workfront planning, team capacity, Primavera P6 import, drawing-based planning and management reporting.
+Jenasaro connects schedule logic and baselines, look-ahead planning, work readiness, daily commitments, planned-versus-actual execution, constraints, milestones, team capacity, subcontractor coordination, Primavera P6 import, drawing-based workfront planning and management project-performance analytics.
+
+Lean construction, Last Planner, PPC and takt planning are supported methodologies within the broader planning and execution-control workflow.
 
 Product enquiries: https://jenasaro.com/interest
+Contact: info@jenasaro.com
