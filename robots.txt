@@ -1,4 +1,12 @@
+# Public product and learning pages are available to search crawlers.
 User-agent: *
 Allow: /
+Disallow: /api/
+
+# Search access is separate from training-crawler preferences.
+User-agent: OAI-SearchBot
+User-agent: PerplexityBot
+Allow: /
+Disallow: /api/
 
 Sitemap: https://jenasaro.com/sitemap.xml

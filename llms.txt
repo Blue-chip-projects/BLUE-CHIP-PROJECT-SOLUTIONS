@@ -34,3 +34,8 @@ Lean construction, Last Planner, PPC and takt planning are supported methodologi
 
 Product enquiries: https://jenasaro.com/interest
 Contact: info@jenasaro.com
+
+## Additional product workflows
+
+- [3D model planning](https://jenasaro.com/3d-model-planning): Link objects from Navisworks FBX exports to construction activities and review status. Native NWD/NWC/NWF/IFC files are not supported.
+- [Baseline and schedule control](https://jenasaro.com/baseline-schedule-control): Compare baseline intent with commitments and current status; review delays and selected-activity mitigation.

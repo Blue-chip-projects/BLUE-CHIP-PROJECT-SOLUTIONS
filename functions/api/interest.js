@@ -23,6 +23,7 @@ export async function onRequestPost({request,env}){
       teamSize:clean(body.teamSize,40),
       interest:clean(body.interest,100),
       message:clean(body.message,1500),
+      discoverySource:clean(body.discoverySource,100),
       consent:body.consent==="yes"
     };
 
