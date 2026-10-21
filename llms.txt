@@ -17,6 +17,9 @@ Canonical website: https://jenasaro.com/
 - Construction analytics
 
 ## Core pages
+- Feature overview: https://jenasaro.com/features
+- Project organisation charts and resource planning: https://jenasaro.com/project-organisation-resource-planning
+- Jenasaro Academy software training: https://jenasaro.com/academy
 - Production management software: https://jenasaro.com/production-management-software
 - Construction execution control: https://jenasaro.com/construction-execution-control
 - Construction scheduling software: https://jenasaro.com/construction-scheduling-software
@@ -36,6 +39,11 @@ Product enquiries: https://jenasaro.com/interest
 Contact: info@jenasaro.com
 
 ## Additional product workflows
+
+- Connected organisation trees show project leadership, departments, subcontractors, teams and workers. Users can inspect recorded person profiles, zoom, focus a team in full screen and print charts. Editing and contact information are subject to project permissions.
+- Organisation, team, resource-loader and area-responsibility workflows use connected project records. Project structures and assignments should be reviewed when scope changes.
+- Academy guided practice and feature-specific training preserve completion of unchanged sections. In-app release notices provide change summaries, Academy links, dismissal and reminder controls.
+- This file is a public product summary, not a guarantee of search indexing or AI inclusion. No independent customer rating is asserted here.
 
 - [3D model planning](https://jenasaro.com/3d-model-planning): Link objects from Navisworks FBX exports to construction activities and review status. Native NWD/NWC/NWF/IFC files are not supported.
 - [Baseline and schedule control](https://jenasaro.com/baseline-schedule-control): Compare baseline intent with commitments and current status; review delays and selected-activity mitigation.
