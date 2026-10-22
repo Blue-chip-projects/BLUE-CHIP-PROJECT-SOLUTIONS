@@ -1,4 +1,4 @@
-name: Notify IndexNow
+name: Search discovery checks and IndexNow
 
 on:
   push:
@@ -9,15 +9,51 @@ on:
       - "sitemap.xml"
       - "robots.txt"
       - "llms.txt"
+      - "_headers"
+      - "_redirects"
+      - "scripts/**"
       - ".github/workflows/indexnow.yml"
+  pull_request:
+    branches:
+      - main
   workflow_dispatch:
 
+permissions:
+  contents: read
+
 jobs:
-  submit:
+  validate:
     runs-on: ubuntu-latest
     steps:
       - name: Check out site
         uses: actions/checkout@v4
+      - name: Check public pages and crawler configuration
+        run: python scripts/check_search.py
+      - name: Check indexing failure cases
+        run: python -m unittest discover -s scripts -p 'test_*.py'
+
+  submit:
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    needs: validate
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    concurrency:
+      group: indexnow-production
+      cancel-in-progress: true
+    permissions:
+      contents: read
+      checks: read
+    steps:
+      - name: Check out site
+        uses: actions/checkout@v4
+
+      - name: Wait for this commit to be published
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python scripts/wait_for_deployment.py
+
+      - name: Verify live public pages before notifying search engines
+        run: python scripts/check_search.py --live
 
       - name: Build IndexNow payload from sitemap
         run: |
@@ -45,8 +81,7 @@ jobs:
 
       - name: Notify IndexNow
         run: |
-          sleep 30
-          code=$(curl -sS -o indexnow-response.txt -w "%{http_code}" \
+          code=$(curl --connect-timeout 10 --max-time 60 -sS -o indexnow-response.txt -w "%{http_code}" \
             -X POST \
             -H "Content-Type: application/json; charset=utf-8" \
             --data-binary @indexnow.json \
@@ -58,3 +93,5 @@ jobs:
             cat indexnow-response.txt || true
             exit 1
           fi
+
+          echo "Search checks passed and IndexNow accepted the notification (HTTP $code). Acceptance does not confirm indexing." >> "$GITHUB_STEP_SUMMARY"
