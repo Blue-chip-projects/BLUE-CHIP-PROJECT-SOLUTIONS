@@ -2,6 +2,14 @@
 
 Public marketing website for Jenasaro.
 
+## Search discovery checks
+
+Run `python scripts/check_search.py` and `python -m unittest discover -s scripts -p 'test_*.py'` before publishing. After deployment, run `python scripts/check_search.py --live` to verify the sitemap, all listed pages, canonical URLs, metadata, crawler rules, IndexNow ownership key and real HTTP 404 responses.
+
+Keep the top-level `404.html`: without it Cloudflare Pages treats this static site as a single-page app and serves the homepage for nonexistent URLs. Keep the existing Google verification tag and IndexNow key file.
+
+The search workflow validates pull requests. On production pushes it waits for the **Cloudflare Pages** check to succeed for the exact commit, verifies the live site, and only then notifies IndexNow. A successful notification confirms receipt, not search indexing or AI inclusion. Google indexing and sitemap processing must still be checked in Search Console; Bing Webmaster verification and Cloudflare account rules are managed outside this repository.
+
 ## Structure
 
 - `index.html` — main marketing site
